@@ -1,0 +1,92 @@
+<div class="modal-content  shadow bg-dark text-light mt-3">
+  <div class="modal-header p-5 pb-4 border-bottom-0 justify-content-center">
+    <!-- <h5 class="modal-title">Modal title</h5> -->
+    <h2 class="fw-bold mb-0 text-align-center ">Adicione um novo livro no banco de dados!</h2>
+
+  </div>
+
+  <div class="modal-body p-5 pt-0">
+    <form [formGroup]="formBook" class="text-dark" (ngSubmit)="addBook()" #formDir="ngForm">
+      <div class="form-floating mb-3 ">
+        <input type="name" class="form-control rounded-3" id="name" placeholder="name" formControlName="name" required>
+        <label for="name">Nome do livro</label>
+        <div *ngIf="name.invalid && formDir.submitted" class="validation-error text-warning">
+          <p class="small">O nome é obrigatório.</p>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control rounded-3" id="floatingInput" placeholder="price" formControlName="price">
+        <label for="price">Preço</label>
+        <div *ngIf="price.invalid && formDir.submitted" class="validation-error text-warning">
+          <p class="small">O preço é obrigatório.</p>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control rounded-3" id="floatingInput" placeholder="quantity" formControlName="quantity">
+        <label for="quantity">Quantidade</label>
+        <div *ngIf="quantity.invalid && formDir.submitted" class="validation-error text-warning">
+          <p class="small">A quantidade é obrigatória.</p>
+        </div>
+      </div>
+
+      <div class="text-light form-floating mb-3 mb-0 text-align-center fs-5 pt-1 pb-2">
+        <p class="fs-4 mb-3 fw-bold mb-0 text-align-center">Categoria</p>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="1" name="category" id="flexRadioDefault1" formControlName="category">
+        <label class="form-check-label" for="category">
+          Romance
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="2" name="category" id="flexRadioDefault2" formControlName="category">
+        <label class="form-check-label" for="category">
+          Fantasia
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="3" name="category" id="flexRadioDefault1" formControlName="category">
+        <label class="form-check-label" for="category">
+          Biografia
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="4" name="category" id="flexRadioDefault2" formControlName="category">
+        <label class="form-check-label" for="category">
+          Ciência
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="5" name="category" id="flexRadioDefault1" formControlName="category">
+        <label class="form-check-label" for="category">
+          Best Seller
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="6" name="category" id="flexRadioDefault2" formControlName="category">
+        <label class="form-check-label" for="category">
+          Filosofia
+        </label>
+      </div>
+      </div>
+      <div *ngIf="category.invalid && formDir.submitted" class="validation-error text-warning">
+        <p class="small">A categoria é obrigatória.</p>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="img" class="form-control rounded-3" id="floatingInput" placeholder="img" formControlName="img">
+        <label for="img">Imagem</label>
+        <div *ngIf="img.invalid && formDir.submitted" class="validation-error text-warning">
+          <p class="small">A imagem é obrigatório.</p>
+        </div>
+      </div>
+      <button class="w-100 mb-2 btn btn-lg rounded-3 btn-info" type="submit">Adicionar livro</button>
+      <div *ngIf="!createService.valid && formDir.submitted" class="validation-error text-warning">
+        <p class="small">Algo deu errado, verifique os dados e tente novamente.</p>
+        <p class="small">{{createService.errorMsg}}</p>
+      </div>
+      <div *ngIf="createService.valid && formDir.submitted" class="validation-error text-warning">
+        <h5 class="fs-bold text-info">Livro adicionado com sucesso!</h5>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.cardimg {
+  display: flex;
+  width: 100%;
+}
+
+.cardimg img{
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.card{
+
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}

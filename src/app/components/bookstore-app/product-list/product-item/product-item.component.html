@@ -1,0 +1,26 @@
+<div class="section_our_solution">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="our_solution_category">
+        <div class="solution_cards_box justify-content-between">
+          <div class="solution_card">
+            <div class="hover_color_bubble"></div>
+
+            <div class="cardimg  p-3 flex justify-content-around align-itens-center"><img class="" width="100%" src='{{"assets/images/" + livro.img + ".jpg"}}'></div>
+
+            <div class="solu_title">
+              <h3>{{livro.name}}</h3>
+            </div>
+            <div class="solu_description">
+              <p>Categoria: {{livro.category}}</p>
+              <p>Disponível: {{livro.quantity}}</p>
+              <p>{{livro.price | currency:'BRL'}}</p>
+              <button type="button" class="read_more_btn" (click)='salvaLivro(livro)' type="submit">Detalhes</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

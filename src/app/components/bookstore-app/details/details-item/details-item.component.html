@@ -1,0 +1,30 @@
+<div class="card shadow-sn bg-dark">
+  <div class="cardimg p-3 flex justify-content-around align-itens-center">
+  <img class="" width="100%" src='{{"assets/images/" + livro.img + ".jpg"}}'>
+</div>
+
+  <div class="card-body text-warning">
+    <form [formGroup]="formDetails" (ngSubmit)="atualizaLivro()" #formDir="ngForm">
+
+      <p class="card-text"></p>
+      <input type="text" class="form-control rounded-3" placeholder="{{livro.name}}" formControlName="name">
+      <p class="small">Editar nome</p>
+      <input class="form-control rounded-3" placeholder="{{livro.category}}" formControlName="category">
+      <p class="small">Editar categoria</p>
+      <input class="form-control rounded-3" placeholder="{{livro.quantity}}" formControlName="quantity" pattern="[0-9]*">
+      <p class="small">Editar quantidade</p>
+      <input class="form-control rounded-3" placeholder="{{livro.price | currency:'BRL'}}" formControlName="price" pattern="[0-9]*">
+      <p class="small">Editar preço</p>
+
+
+
+    <div class="btn-group d-flex justify-content-around w-100 flex-column">
+      <button type="button" class="btn btn-info btn-block btn-sm" type="submit">Atualizar</button>
+      <br>
+      <button type="button" class="btn btn-info btn-block btn-sm" (click)='deletaLivro(livro)'>Deletar</button>
+    </div>
+  </form>
+  </div>
+
+
+</div>
