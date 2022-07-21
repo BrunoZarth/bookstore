@@ -11,7 +11,8 @@ export class DetailsItemService {
   valid = true;
   errorMsg: any;
 
-  private url = "http://localhost:8080/api/book";
+  //private url = "http://localhost:8080/api/book";
+  private url = "https://bookstore-management-back.herokuapp.com/api/book";
 
   httpOptions = {
     Headers: new HttpHeaders({'content-type': 'application/json'})
