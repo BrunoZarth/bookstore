@@ -11,7 +11,8 @@ export class CreateService {
   valid = false;
   errorMsg: any;
 
-  private url = "http://localhost:8080/api/book/addBook";
+  //private url = "http://localhost:8080/api/book/addBook";
+  private url = "https://bookstore-management-back.herokuapp.com/api/book/addBook";
 
   httpOptions = {
     Headers: new HttpHeaders({'content-type': 'application/json'})

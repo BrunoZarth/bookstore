@@ -7,7 +7,8 @@ import { Observable } from "rxjs";
 
 export class BookService
 {
-  private url = "http://localhost:8080/api/book";
+  //private url = "http://localhost:8080/api/book";
+  private url = "https://bookstore-management-back.herokuapp.com/api/book";
   private filters = "";
   httpOptions = {
     Headers: new HttpHeaders({'content-type': 'application/json'})
